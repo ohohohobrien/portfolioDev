@@ -7,7 +7,7 @@
     <title>Sean's Porfolio</title>
     <link rel="stylesheet" href="./output.css">
 </head>
-<body class="preload bg-slate-900">
+<body id="body" class="preload bg-slate-900">
 
     <div id="loader" class="loader-wrapper">
         <span class="loader"><span class="loader-inner"></span></span>
@@ -19,23 +19,24 @@
         <a href="#contact-section" class="mx-4 font-base text-yellow-500 text-base md:text-2xl hover:underline">contact</a>
     </nav>
 
-    <section id="hero--div" class="w-100 h-screen min-h-full text-white mx-0 drop-shadow-xl"> 
+    <section id="hero--div" class="w-100 h-screen min-h-full text-white mx-0 drop-shadow-xl overflow-x-hidden"> 
         <div class="md:flex md:flex-row-reverse md:justify-center md:align-middle md:pt-32">
-            <div class="p-10">
+            <div class="p-14">
                 <img id="profile-picture" class="rounded-full m-auto" src="./profile-image.jpg"/>
             </div>
             <div class="mt-5 p-5">
-                <h1 class="lg:text-8xl md:6xl text-5xl space-y-5 font-bold"><span class="text-yellow-500">I'm <b class="font-extrabold">Sean</b></span></br>a developer</br><span class="text-yellow-500">for you</span></h1>
+                <h1 class="lg:text-8xl md:6xl text-5xl space-y-5 font-bold bg-slate-800/50 rounded-sm md:bg-transparent py-4"><span class="text-yellow-500">I'm <b class="font-extrabold">Sean</b></span></br>a developer</br><span class="text-yellow-500">for you</span></h1>
                 <button id="hero-button" onclick="{document.getElementById('projects-section').scrollIntoView()}" class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold md:text-4xl text-2xl mt-10 md:mt-28 p-4 rounded-sm drop-shadow-xl">PROJECTS</button>
             </div>
         </div>           
     </section>
 
     <section x-data="{ business: false, web: false, mobile: false }" id="projects-section" class="w-100 bg-blue-500 text-white py-16 mt-16 background-stylised-dots-2 drop-shadow-2xl">
+  
         <div>
             <h1 class="font-extrabold text-5xl px-3 md:text-8xl my-5 text-center text-yellow-500 --stroke">projects</h1>
             <hr class="mx-4">
-            <p class="text-xl mt-10 text-center m-auto max-w-screen-md p-4 italic md:text-2xl"><b class="text-yellow-500 font-extrabold">Please press</b> the below project buttons to view my work.<br/>You can demo the projects live too (except for business).</p>
+            <p class="text-xl mt-10 text-center m-auto max-w-screen-md p-4 md:text-2xl"><b class="text-yellow-500 font-extrabold">Please press</b> the below project buttons to view my work.<br/>You can demo the projects live too (except for business).</p>
         </div>
         <div class="flex flex-col md:flex-row justify-center align-middle mt-16">
             <button id="business-projects" @click="business = ! business; if (business) {document.getElementById('business-projects').scrollIntoView()}; if (web) {web = !web}; if (mobile) {mobile = ! mobile}; styleButtons('business')" class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:mb-0 md:text-3xl py-2 px-4 mx-16 md:mx-12 rounded drop-shadow-xl">business (4)</button>
@@ -473,8 +474,8 @@
                 <ul class="list-disc">
                     <li class="text-left md:text-right rtl-list">moved to Tokyo and learnt Japanese</li>
                     <li class="text-left md:text-right rtl-list">studied programming (for fun this time!)</li>
-                    <li class="text-left md:text-right rtl-list">worked as an engineer / manager for online business</li>
-                    <li class="text-left md:text-right rtl-list">had a lot of fun</li>
+                    <li class="text-left md:text-right rtl-list">worked as an engineer / manager for an online business</li>
+                    <li class="text-left md:text-right rtl-list">had the time of my life</li>
                 </ul>
             </div>
             <div class="hidden md:block">
@@ -485,7 +486,7 @@
                 <h3 class="font-extrabold text-yellow-500 text-2xl md:text-5xl text-left mb-4"><span class="">💻&nbsp;</span> freelancing</h3>
                 <h4 class="font-light text-xl md:text-3xl text-left text-slate-200">2022 - now 🇦🇺</h4>
                 <ul class="list-disc">
-                    <li class="text-left">started freelancing for previous JP-based employer</li>
+                    <li class="text-left">started freelancing for Japanese company</li>
                     <li class="text-left">looking forward to the next adventure</li>
                 </ul>
             </div>
@@ -517,5 +518,5 @@
     <!-- Copy to clipboard -->
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
     <!-- Website logic -->
-    <script src="./index.js" type="text/javascript"></script>
+    <script defer src="./index.js" type="text/javascript"></script>
 </html>

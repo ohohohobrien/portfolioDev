@@ -2,7 +2,7 @@ VANTA.NET({
   el: "#hero--div",
   mouseControls: true,
   touchControls: true,
-  gyroControls: true,
+  gyroControls: false,
   minHeight: 200.00,
   minWidth: 200.00,
   scale: 1.00,
@@ -147,4 +147,20 @@ function styleButtons(buttonName) {
       businessSelected = false;
     }
   }
+  if (webSelected || mobileSelected || businessSelected) {
+    stickyButton.style.display = "block";
+  } else {
+    stickyButton.style.display = "none";
+  }
 }
+
+// handle the sticky button to close projects
+
+const bodyElement = document.getElementById("body");
+const stickyButton = document.createElement("button");
+stickyButton.innerHTML = "return to top";
+stickyButton.classList.add("--sticky-button");
+stickyButton.addEventListener("click", () => {
+  document.getElementById("projects-section").scrollIntoView()
+}); 
+bodyElement.append(stickyButton);

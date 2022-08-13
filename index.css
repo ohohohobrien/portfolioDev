@@ -23,7 +23,30 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-html, body { overflow-x: hidden; }
+.--sticky-button {
+    display: none;
+    position: sticky;
+    position: -webkit-sticky; /* Safari */
+    bottom: 1em;
+    float: right;
+    margin-right: 3em;
+    background-color: #ffc210;
+    color: var(--primary-colour);
+    padding: 1em;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    border-radius: 2px;
+    font-weight: 600;
+    --tw-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    --tw-border-opacity: 1;
+    border-color: var(--primary-colour);
+    border-width: 2px;
+}
+
+.--sticky-button:hover {
+    background-color: #8c6900;
+}
 
 .--stroke {
     color: transparent;
@@ -149,7 +172,7 @@ html, body { overflow-x: hidden; }
     width: 30px;
     height: 30px;
     position: relative;
-    border: 4px solid #fff;
+    border: 4px solid var(--secondary-colour);
     animation: loader 2s infinite ease;
 }
 
@@ -157,7 +180,7 @@ html, body { overflow-x: hidden; }
     vertical-align: top;
     display: inline-block;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--secondary-colour);
     animation: loader-inner 2s infinite ease-in;
 }
 
@@ -267,6 +290,18 @@ html, body { overflow-x: hidden; }
     background-color: rgb(228, 146, 6);
     color: black;
     border: black 2px solid;
+}
+
+@media (max-width: 768px) {
+    
+    .--sticky-button {
+        margin-right: 1em;
+        padding: 0.5em;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        border-radius: 2px;
+        font-weight: 600;
+    }
 }
 
 @media (min-width: 768px) { 
