@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sean's Porfolio</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body class="preload bg-slate-900">
+
+    <div id="loader" class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+    <nav id="nav" class="navbar-hidden fixed bg-slate-800/90 md:bg-slate-800/60 top-0 left-0 w-100 z-10 p-4 mx-0 rounded-br-md border-yellow-500 border-2 drop-shadow-xl">
+        <a href="#projects-section" class="mx-4 font-base text-yellow-500 text-base md:text-2xl hover:underline">projects</a>
+        <a href="#about-section" class="mx-4 font-base text-yellow-500 text-base md:text-2xl hover:underline">about</a>
+        <a href="#contact-section" class="mx-4 font-base text-yellow-500 text-base md:text-2xl hover:underline">contact</a>
+    </nav>
+
+    <section id="hero--div" class="w-100 h-screen min-h-full text-white mx-0 drop-shadow-xl"> 
+        <div class="md:flex md:flex-row-reverse md:justify-center md:align-middle md:pt-32">
+            <div class="p-10">
+                <img id="profile-picture" class="rounded-full m-auto" src="./profile-image.jpg"/>
+            </div>
+            <div class="mt-5 p-5">
+                <h1 class="lg:text-8xl md:6xl text-5xl space-y-5 font-bold"><span class="text-yellow-500">I'm <b class="font-extrabold">Sean</b></span></br>a developer</br><span class="text-yellow-500">for you</span></h1>
+                <button id="hero-button" onclick="{document.getElementById('projects-section').scrollIntoView()}" class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold md:text-4xl text-2xl mt-10 md:mt-28 p-4 rounded-sm drop-shadow-xl">PROJECTS</button>
+            </div>
+        </div>           
+    </section>
+
+    <section x-data="{ business: false, web: false, mobile: false }" id="projects-section" class="w-100 bg-blue-500 text-white py-16 mt-16 background-stylised-dots-2 drop-shadow-2xl">
+        <div>
+            <h1 class="font-extrabold text-5xl px-3 md:text-8xl my-5 text-center text-yellow-500 --stroke">projects</h1>
+            <hr class="mx-4">
+            <p class="text-xl mt-10 text-center m-auto max-w-screen-md p-4 italic md:text-2xl"><b class="text-yellow-500 font-extrabold">Please press</b> the below project buttons to view my work.<br/>You can demo the projects live too (except for business).</p>
+        </div>
+        <div class="flex flex-col md:flex-row justify-center align-middle mt-16">
+            <button id="business-projects" @click="business = ! business; if (business) {document.getElementById('business-projects').scrollIntoView()}; if (web) {web = !web}; if (mobile) {mobile = ! mobile}; styleButtons('business')" class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:mb-0 md:text-3xl py-2 px-4 mx-16 md:mx-12 rounded drop-shadow-xl">business (4)</button>
+            <button id="web-projects" @click="web = ! web; if (web) {document.getElementById('web-projects').scrollIntoView()}; if (business) {business = !business}; if (mobile) {mobile = ! mobile}; styleButtons('web')" class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:mb-0 md:text-3xl py-2 px-4 mx-16 md:mx-12 rounded drop-shadow-xl">web (3)</button>
+            <button id="mobile-projects" @click="mobile = ! mobile; if (mobile) {document.getElementById('mobile-projects').scrollIntoView()}; if (business) {business = !business}; if (web) {web = ! web}; styleButtons('mobile')" class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:mb-0 md:text-3xl py-2 px-4 mx-16 md:mx-12 rounded drop-shadow-xl">mobile (2)</button>
+        </div>
+
+        <div x-show="business" x-collapse>
+   
+            <div x-data="{ show: false }" class="flex flex-col justify-center align-middle md:p-5 mt-5 p-2 bg-slate-200/20 --bg-feedback">
+                <h2 id="feedback-header" @click="show = ! show; if (show) {document.getElementById('feedback-header').scrollIntoView()}" class="font-bold md:text-6xl text-xl md:my-5 md:mx-20 md:py-5 my-2 mx-2 py-2 text-center underline text-white hover:cursor-pointer bg-slate-600/70 hover:bg-green-500 rounded-sm">feedback system 📊</h2>
+                <div x-show="show" x-collapse class="mx-2 md:mx-20 p-2 md:p-5 grid grid-cols-1 lg:grid-cols-3 bg-slate-600/70 rounded-sm">
+                    <hr class="mx-1 md:mx-5 md:mt-5 border-green-500 col-span-1 lg:col-span-3">
+                    <div class="col-span-1 lg:col-span-3 p-2 md:p-5">
+                        <p class="text-base md:text-xl">
+                            I was tasked with creating a system for customers to score over 100 staff members based on their service for 11 different departments.
+                            <br><br>
+                            From this, I designed, implemented and documented a customer facing feedback system which produced analysis tools for management.
+                            <br><br>
+                            Through the company's proprietary scheduling system, a customer was prompted to complete a Google Form for service feedback.
+                            <br><br>
+                            A central database received form responses, analysed results and sent data via webhooks to the relevant department.
+                            <br><br>
+                            Department data was received in a Google Sheet, which had pre-built formulas / tables for KPI reporting and analysis.
+                            <br><br>
+                            Individual workers could access their own feedback scores and analyse their personal trends. 
+                        </p>
+                    </div>
+                    <hr class="col-span-1 lg:col-span-3 border-green-500">
+                    <div class="col-span-1 flex justify-between align-middle p-2 md:p-5 m-auto">
+                        <div class="flex flex-col justify-center align-middle p-2 md:p-5">
+                            <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Project Goals:</h4>
+                            <div class="">
+                                <ul class="list-disc">
+                                    <li class="text-base md:text-xl my-0 py-0">increase service quality</li>
+                                    <li class="text-base md:text-xl my-0 py-0">automate tasks</li>
+                                    <li class="text-base md:text-xl my-0 py-0">change business model</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 lg:col-span-2 flex flex-col justify-center align-middle p-2 md:p-5">
+                        <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Built with:</h4>
+                        <div class="flex flex-wrap justify-center align-middle">
+                            <span class="bg-green-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">JS</span>
+                            <span class="bg-green-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Google Suites</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div x-data="{ show: false }" class="flex flex-col justify-center align-middle md:p-5 mt-5 p-2 bg-slate-200/20 --bg-automation">
+                <h2 id="automation-header" @click="show = ! show; if (show) {document.getElementById('automation-header').scrollIntoView()}" class="font-bold md:text-6xl text-xl md:my-5 md:mx-20 md:py-5 my-2 mx-2 py-2 text-center underline text-white hover:cursor-pointer bg-slate-600/90 hover:bg-blue-700 rounded-l-sm">task automation 🤖</h2>
+                <div x-show="show" x-collapse class="mx-2 md:mx-20 p-2 md:p-5 grid grid-cols-1 lg:grid-cols-3 bg-slate-600/90 rounded-l-sm">
+                    <hr class="mx-1 md:mx-5 md:mt-5 border-blue-700 col-span-1 lg:col-span-3">
+                    <div class="col-span-1 lg:col-span-3 p-2 md:p-5">
+                        <p class="text-base md:text-xl">
+                            I automated a manual task that saves over 1,200 hours a year equating to a cost reduction of $26,000 AUD.
+                            <br><br>
+                            This task took a manager on average 2 hours a week to complete, which the program completed in 60 seconds (11 managers).
+                            <br><br>
+                            The company used a web based software that required managers to manually check data in a very time consuming way.
+                            <br><br>
+                            Using a Python script with Selenium's library, the program would automatically navigate the web software with instructions based on HTML elements.
+                            <br><br>
+                            The program had an easy-to-use user interface for a manager to input a date range. This would output a formatted text file that dislayed which staff member had which data missing.
+                            <br><br>
+                            The program was exported to an executable file that could run on Windows machines making it accessible company wide.
+                        </p>
+                    </div>
+                    <hr class="col-span-1 lg:col-span-3 border-blue-700">
+                    <div class="col-span-1 flex justify-between align-middle p-2 md:p-5 m-auto">
+                        <div class="flex flex-col justify-center align-middle p-2 md:p-5">
+                            <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Project Goals:</h4>
+                            <div class="">
+                                <ul class="list-disc">
+                                    <li class="text-base md:text-xl my-0 py-0">automate tasks</li>
+                                    <li class="text-base md:text-xl my-0 py-0">reduce expenses</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 lg:col-span-2 flex flex-col justify-center align-middle p-2 md:p-5">
+                        <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Built with:</h4>
+                        <div class="flex flex-wrap justify-center align-middle">
+                            <span class="bg-blue-700 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Python</span>
+                            <span class="bg-blue-700 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">HTML</span>
+                            <span class="bg-blue-700 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Selenium</span>
+                            <span class="bg-blue-700 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Tkinter</span>
+                            <span class="bg-blue-700 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Pyinstaller</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div x-data="{ show: false }" class="flex flex-col justify-center align-middle md:p-5 mt-5 p-2 bg-slate-200/20 --bg-slack">
+                <h2 id="slack-header" @click="show = ! show; if (show) {document.getElementById('slack-header').scrollIntoView()}" class="font-bold md:text-6xl text-xl md:my-5 md:mx-20 md:py-5 my-2 mx-2 py-2 text-center underline text-white hover:cursor-pointer bg-slate-600/90 hover:bg-yellow-500 rounded-l-sm">Slack integration 🛰️</h2>
+                <div x-show="show" x-collapse class="mx-2 md:mx-20 p-2 md:p-5 grid grid-cols-1 lg:grid-cols-3 bg-slate-600/90 rounded-l-sm">
+                    <hr class="mx-1 md:mx-5 md:mt-5 border-yellow-500 col-span-1 lg:col-span-3">
+                    <div class="col-span-1 lg:col-span-3 p-2 md:p-5">
+                        <p class="text-base md:text-xl">
+                            I moved the company's communcation platform from Google Chat / Line for over 150 employees to Slack.
+                            <br><br>
+                            By creating Slack Apps and integrating webhooks, there were numerous automated messages that were implemented to notify staff in a timely fashion of updates and urgent actions required. Previously, these notifications were all manual.
+                            <br><br>
+                            For example, due to the closed nature of the company's software, when a client cancelled a service, an email was sent to reception only. Using Google Apps Script, I read the reception's inbox every minute for certain emails and if found, would convert the contents to a Slack message and send this to the relevant Slack channel.
+                            <br><br>
+                            I also prepared training guides and rulesets for Slack use.
+                        </p>
+                    </div>
+                    <hr class="col-span-1 lg:col-span-3 border-yellow-500">
+                    <div class="col-span-1 flex justify-between align-middle p-2 md:p-5 m-auto">
+                        <div class="flex flex-col justify-center align-middle p-2 md:p-5">
+                            <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Project Goals:</h4>
+                            <div class="">
+                                <ul class="list-disc">
+                                    <li class="text-base md:text-xl my-0 py-0">improve communication</li>
+                                    <li class="text-base md:text-xl my-0 py-0">automate tasks</li>
+                                    <li class="text-base md:text-xl my-0 py-0">improve work life balance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 lg:col-span-2 flex flex-col justify-center align-middle p-2 md:p-5">
+                        <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Built with:</h4>
+                        <div class="flex flex-wrap justify-center align-middle">
+                            <span class="bg-yellow-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Slack</span>
+                            <span class="bg-yellow-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">JS</span>
+                            <span class="bg-yellow-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Google Suites</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div x-data="{ show: false }" class="flex flex-col justify-center align-middle md:p-5 mt-5 p-2 bg-slate-200/20 --bg-email">
+                <h2 id="email-header" @click="show = ! show; if (show) {document.getElementById('email-header').scrollIntoView()}" class="font-bold md:text-6xl text-xl md:my-5 md:mx-20 md:py-5 my-2 mx-2 py-2 text-center underline text-white hover:cursor-pointer bg-slate-600/90 hover:bg-red-500 rounded-l-sm">email marketing 📧</h2>
+                <div x-show="show" x-collapse class="mx-2 md:mx-20 p-2 md:p-5 grid grid-cols-1 lg:grid-cols-3 bg-slate-600/90 rounded-l-sm">
+                    <hr class="mx-1 md:mx-5 md:mt-5 border-red-500 col-span-1 lg:col-span-3">
+                    <div class="col-span-1 lg:col-span-3 p-2 md:p-5">
+                        <p class="text-base md:text-xl">
+                            I developed exectuable programs with Python that take in CSV information exported from the company's proprietary software.
+                            <br><br>
+                            These programs generate useable CSVs that identify students who have been studying at the same level for X number of months and prompt a teacher to give feedback for the student.
+                            <br><br>
+                            I created an HTML template (with CSS) for an email and a Google Sheet to accept formatted CSV data. With Google Apps Script, the sheet would scan each row of the CSV (a student) and generate and send a beautiful email that dynamically input details and the teacher's comments.
+                            <br><br>
+                            This system is used once every 3 months to email around 200 students.
+                        </p>
+                    </div>
+                    <hr class="col-span-1 lg:col-span-3 border-red-500">
+                    <div class="col-span-1 flex justify-between align-middle p-2 md:p-5 m-auto">
+                        <div class="flex flex-col justify-center align-middle p-2 md:p-5">
+                            <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Project Goals:</h4>
+                            <div class="">
+                                <ul class="list-disc">
+                                    <li class="text-base md:text-xl my-0 py-0">increase customer lifetime</li>
+                                    <li class="text-base md:text-xl my-0 py-0">reduce marketing costs</li>
+                                    <li class="text-base md:text-xl my-0 py-0">automate tasks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 lg:col-span-2 flex flex-col justify-center align-middle p-2 md:p-5">
+                        <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Built with:</h4>
+                        <div class="flex flex-wrap justify-center align-middle">
+                            <span class="bg-red-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Python</span>
+                            <span class="bg-red-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">JS</span>
+                            <span class="bg-red-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">HTML</span>
+                            <span class="bg-red-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">CSS</span>
+                            <span class="bg-red-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Google Suites</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="web" x-collapse>
+   
+            <div x-data="{ show: false }" class="flex flex-col justify-center align-middle md:p-5 mt-5 p-2 bg-slate-200/20 --bg-joke">
+                <h2 id="joke-header" @click="show = ! show; if (show) {document.getElementById('joke-header').scrollIntoView()}" class="font-bold md:text-6xl text-xl md:my-5 md:mx-20 md:py-5 my-2 mx-2 py-2 text-center underline text-white hover:cursor-pointer bg-slate-600/60 hover:bg-yellow-500 rounded-l-sm">share a joke 🤣</h2>
+                <div x-show="show" x-collapse class="mx-2 md:mx-20 p-2 md:p-5 grid grid-cols-1 lg:grid-cols-3 bg-slate-600/60 rounded-l-sm">
+                    <hr class="mx-1 md:mx-5 border-yellow-500 col-span-1 lg:col-span-3">
+                    <div class="col-span-1 lg:col-span-2 md:p-5 p-2 flex align-middle">
+                        <video autoplay loop muted playsinline class="m-auto rounded-3xl">
+                            <source type="video/webm" src="https://ohohohobrien.github.io/portfolio/images/Punny.webm">
+                            <img src="https://ohohohobrien.github.io/portfolio/images/punny.png">
+                        </video>
+                    </div>
+                    <div class="col-span-1 p-2 md:p-5">
+                        <p class="text-base md:text-xl">
+                            Server based web application that allows users to create, search, share and vote on puns!
+                            <br><br>
+                            Tailwind for CSS for a fully responsive site for all sizes. Built with a dark theme in mind too.
+                            <br><br>
+                            Python/Django for the backend framework with SQLite as the database.
+                            <br><br>
+                            Using JavaScript's fetch API, users can vote in real time for puns (like / dislike buttons).
+                            <br><br>
+                            All UX/UI was designed in Figma for prototyping. 
+                        </p>
+                    </div>
+                    <hr class="col-span-1 lg:col-span-3 border-yellow-500">
+                    <div class="col-span-1 flex justify-between align-middle p-2 md:p-5 m-auto">
+                        <div class="flex flex-col justify-center align-middle p-2 md:p-5 whitespace-pre">
+                            <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Links:</h4>
+                            <div class="flex flex-col">
+                                <a class="text-xl md:text-2xl underline hover:bg-yellow-500 text-center" href="https://punnystuff.pythonanywhere.com/" target="_blank">try me</a>
+                                <a class="text-xl md:text-2xl underline hover:bg-yellow-500 text-center" href="https://github.com/ohohohobrien/punnyDjango" target="_blank">github</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 lg:col-span-2 flex flex-col justify-center align-middle p-2 md:p-5 whitespace-pre">
+                        <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Built with:</h4>
+                        <div class="flex flex-wrap justify-center align-middle">
+                            <span class="bg-yellow-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">HTML</span>
+                            <span class="bg-yellow-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">CSS</span>
+                            <span class="bg-yellow-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Sass</span>
+                            <span class="bg-yellow-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">JS</span>
+                            <span class="bg-yellow-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Figma</span>
+                            <span class="bg-yellow-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">JSpdf</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div x-data="{ show: false }" class="flex flex-col justify-center align-middle md:p-5 mt-5 p-2 bg-slate-200/20 --bg-calm">
+                <h2 id="brain-header" @click="show = ! show; if (show) {document.getElementById('brain-header').scrollIntoView()}" class="font-bold md:text-6xl text-xl md:my-5 md:mx-20 md:py-5 my-2 mx-2 py-2 text-center underline text-white hover:cursor-pointer bg-slate-600/60 hover:bg-violet-500 rounded-l-sm">rewire your brain 🧠</h2>
+                <div x-show="show" x-collapse class="mx-2 md:mx-20 p-2 md:p-5 grid grid-cols-1 lg:grid-cols-3 bg-slate-600/60 rounded-l-sm">
+                    <hr class="mx-1 md:mx-5 border-violet-500 col-span-1 lg:col-span-3">
+                    <div class="col-span-1 lg:col-span-2 md:p-5 p-2 flex align-middle">
+                        <video autoplay loop muted playsinline class="m-auto rounded-3xl">
+                            <source type="video/webm" src="https://ohohohobrien.github.io/portfolio/images/CBT.webm">
+                            <img src="https://ohohohobrien.github.io/portfolio/images/CBT.png">
+                        </video>
+                    </div>
+                    <div class="col-span-1 p-2 md:p-5">
+                        <p class="text-base md:text-xl">
+                            This single page web application was created with JavaScript, HTML, CSS (using SASS) and integrates JSpdf. 
+                            <br><br>
+                            The site allows a user to input information required for CBT (Cognitive Behavioural Therapy) and generate a PDF summary from user input. 
+                            <br><br>
+                            As users of this struggle with motivation, the app is designed to deliver minimal information at a single point for the user experience. 
+                            <br><br>
+                            The UX and UI is designed around positive reinforcement and a push for continuing forward. 
+                        </p>
+                    </div>
+                    <hr class="col-span-1 lg:col-span-3 border-violet-500">
+                    <div class="col-span-1 flex justify-between align-middle p-2 md:p-5 m-auto">
+                        <div class="flex flex-col justify-center align-middle p-2 md:p-5 whitespace-pre">
+                            <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Links:</h4>
+                            <div class="flex flex-col">
+                                <a class="text-xl md:text-2xl underline hover:bg-violet-500 text-center" href="https://ohohohobrien.github.io/CBTLog/" target="_blank">try me</a>
+                                <a class="text-xl md:text-2xl underline hover:bg-violet-500 text-center" href="https://github.com/ohohohobrien/CBTLog" target="_blank">github</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 lg:col-span-2 flex flex-col justify-center align-middle p-2 md:p-5 whitespace-pre">
+                        <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Built with:</h4>
+                        <div class="flex flex-wrap justify-center align-middle">
+                            <span class="bg-violet-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">HTML</span>
+                            <span class="bg-violet-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">CSS</span>
+                            <span class="bg-violet-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Sass</span>
+                            <span class="bg-violet-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">JS</span>
+                            <span class="bg-violet-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Figma</span>
+                            <span class="bg-violet-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">JSpdf</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div x-data="{ show: false }" class="flex flex-col justify-center align-middle md:p-5 mt-5 p-2 bg-slate-200/20 --bg-map">
+                <h2 id="map-header" @click="show = ! show; if (show) {document.getElementById('map-header').scrollIntoView()}" class="font-bold md:text-6xl text-xl md:my-5 md:mx-20 md:py-5 my-2 mx-2 py-2 text-center underline text-white hover:cursor-pointer bg-slate-600/60 hover:bg-green-500 rounded-l-sm">share your hidden gems 🗺️</h2>
+                <div x-show="show" x-collapse class="mx-2 md:mx-20 p-2 md:p-5 grid grid-cols-1 lg:grid-cols-3 bg-slate-600/60 rounded-l-sm">
+                    <hr class="mx-1 md:mx-5 border-green-500 col-span-1 lg:col-span-3">
+                    <div class="col-span-1 lg:col-span-2 md:p-5 p-2 flex align-middle">
+                        <video autoplay loop muted playsinline class="m-auto rounded-3xl">
+                            <source type="video/webm" src="https://ohohohobrien.github.io/portfolio/images/IWentHere.webm">
+                            <img src="https://ohohohobrien.github.io/portfolio/images/IWentHere.png">
+                        </video>
+                    </div>
+                    <div class="col-span-1 p-2 md:p-5">
+                        <p class="text-base md:text-xl">
+                            Web application created with Python/Djange, SQLite, HTML, CSS (SASS) and Javascript.
+                            <br><br>
+                            Fully mobile responsive web app that allows users to log in, search and create walking route maps to share with other users.
+                            <br><br>
+                            Utilises OpenLayers to display map information / interact with creatable maps.
+                            <br><br>
+                            Fetch requests to the server and communication between the HTML in the client browser is achieved through Javascript interactions. 
+                        </p>
+                    </div>
+                    <hr class="col-span-1 lg:col-span-3 border-green-500">
+                    <div class="col-span-1 flex justify-between align-middle p-2 md:p-5 m-auto">
+                        <div class="flex flex-col justify-center align-middle p-2 md:p-5 whitespace-pre">
+                            <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Links:</h4>
+                            <div class="flex flex-col">
+                                <a class="text-xl md:text-2xl underline hover:bg-green-500 text-center" href="https://ohohohobrien.pythonanywhere.com/" target="_blank">try me</a>
+                                <a class="text-xl md:text-2xl underline hover:bg-green-500 text-center" href="https://github.com/ohohohobrien/iwenthere" target="_blank">github</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 lg:col-span-2 flex flex-col justify-center align-middle p-2 md:p-5 whitespace-pre">
+                        <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Built with:</h4>
+                        <div class="flex flex-wrap justify-center align-middle">
+                            <span class="bg-green-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">HTML</span>
+                            <span class="bg-green-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">CSS</span>
+                            <span class="bg-green-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Sass</span>
+                            <span class="bg-green-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">JS</span>
+                            <span class="bg-green-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Figma</span>
+                            <span class="bg-green-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">OpenLayers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="mobile" x-collapse>
+   
+            <div x-data="{ show: false }" class="flex flex-col justify-center align-middle md:p-5 mt-5 p-2 bg-slate-200/20 --bg-dice">
+                <h2 id="dice-header" @click="show = ! show; if (show) {document.getElementById('dice-header').scrollIntoView()}" class="font-bold md:text-6xl text-xl md:my-5 md:mx-20 md:py-5 my-2 mx-2 py-2 text-center underline text-white hover:cursor-pointer bg-slate-600/60 hover:bg-violet-400 rounded-l-sm">roll dice 🎲</h2>
+                <div x-show="show" x-collapse class="mx-2 md:mx-20 p-2 md:p-5 grid grid-cols-1 lg:grid-cols-3 bg-slate-600/60 rounded-l-sm">
+                    <hr class="mx-1 md:mx-5 border-violet-400 col-span-1 lg:col-span-3">
+                    <div class="col-span-1 lg:col-span-2 md:p-5 p-2 flex align-middle">
+                        <video autoplay loop muted playsinline class="m-auto rounded-3xl">
+                            <source type="video/webm" src="https://ohohohobrien.github.io/portfolio/images/VirtualDice.webm">
+                            <img src="https://ohohohobrien.github.io/portfolio/images/endframe.png">
+                        </video>
+                    </div>
+                    <div class="col-span-1 p-2 md:p-5">
+                        <p class="text-base md:text-xl">
+                            Android application developed in the Unity Engine with C#. Reads your smartphones accelerometer and determines if enough force has been used to simulate throwing a set of dice. Once detected, dice will be thrown with simulated physics and your dice total is presented.
+                            <br><br>
+                            Each dice was modelled in Blender and textured in Gimp. 
+                            <br><br>
+                            The application was released on the Google Play Store with numerous updates.
+                        </p>
+                    </div>
+                    <hr class="col-span-1 lg:col-span-3 border-violet-400">
+                    <div class="col-span-1 flex justify-between align-middle p-2 md:p-5 m-auto">
+                        <div class="flex flex-col justify-center align-middle p-2 md:p-5 whitespace-pre">
+                            <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Links:</h4>
+                            <div class="flex flex-col">
+                                <a class="text-xl md:text-2xl underline hover:bg-violet-400 text-center" href="https://play.google.com/store/apps/details?id=com.Ohohohobrien.Nat20VirtualDice" target="_blank">Play Store</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 lg:col-span-2 flex flex-col justify-center align-middle p-2 md:p-5 whitespace-pre">
+                        <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Built with:</h4>
+                        <div class="flex flex-wrap justify-center align-middle">
+                            <span class="bg-violet-400 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">C#</span>
+                            <span class="bg-violet-400 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Unity</span>
+                            <span class="bg-violet-400 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Android</span>
+                            <span class="bg-violet-400 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Blender</span>
+                            <span class="bg-violet-400 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Gimp</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div x-data="{ show: false }" class="flex flex-col justify-center align-middle md:p-5 mt-5 p-2 bg-slate-200/20 --bg-orb">
+                <h2 id="orb-header" @click="show = ! show; if (show) {document.getElementById('orb-header').scrollIntoView()}" class="font-bold md:text-6xl text-xl md:my-5 md:mx-20 md:py-5 my-2 mx-2 py-2 text-center underline text-white hover:cursor-pointer bg-slate-600/60 hover:bg-red-500 rounded-l-sm">orb orb 🌠</h2>
+                <div x-show="show" x-collapse class="mx-2 md:mx-20 p-2 md:p-5 grid grid-cols-1 lg:grid-cols-3 bg-slate-600/60 rounded-l-sm">
+                    <hr class="mx-1 md:mx-5 border-red-500 col-span-1 lg:col-span-3">
+                    <div class="col-span-1 lg:col-span-2 md:p-5 p-2 flex align-middle">
+                        <video autoplay loop muted playsinline class="m-auto rounded-3xl">
+                            <source type="video/webm" src="https://ohohohobrien.github.io/portfolio/images/OrbOrb.webm">
+                            <img src="https://ohohohobrien.github.io/portfolio/images/feature.png">
+                        </video>
+                    </div>
+                    <div class="col-span-1 p-2 md:p-5">
+                        <p class="text-base md:text-xl">
+                            Android application developed in the Unity Engine with C#. Using touch, the user can "Orbs" around the screen. 
+                            <br><br>
+                            Through development, an understanding of asset management in relation to it's effects on application size and performance was required in order to reduce the APK size as much as possible while maintaining a quality user experience.
+                            <br><br>
+                            The game was released on the Google Play Store with numerous updates.
+                        </p>
+                    </div>
+                    <hr class="col-span-1 lg:col-span-3 border-red-500">
+                    <div class="col-span-1 flex justify-between align-middle p-2 md:p-5 m-auto">
+                        <div class="flex flex-col justify-center align-middle p-2 md:p-5 whitespace-pre">
+                            <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Links:</h4>
+                            <div class="flex flex-col">
+                                <a class="text-xl md:text-2xl underline hover:bg-red-500 text-center" href="https://play.google.com/store/apps/details?id=com.Ohohohobrien.OrbOrb" target="_blank">Play Store</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 lg:col-span-2 flex flex-col justify-center align-middle p-2 md:p-5 whitespace-pre">
+                        <h4 class="text-center text-xl md:text-3xl p-2 md:p-5 font-bold">Built with:</h4>
+                        <div class="flex flex-wrap justify-center align-middle">
+                            <span class="bg-red-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">C#</span>
+                            <span class="bg-red-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Unity</span>
+                            <span class="bg-red-500 font-bold rounded-xl m-1 md:m-5 p-2 md:p-2 text-center">Android</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="about-section" class="w-100 bg-blue-500 text-white py-16 mt-16 background-stylised active drop-shadow-2xl">
+        <div>
+            <h1 class="font-bold text-5xl px-3 md:text-8xl my-5 text-center text-yellow-500 --stroke">about me</h1>
+            <hr class="mx-4">
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-1 gap-4 mt-16 px-14">
+            <div class="pb-4"">
+                <h3 class="font-extrabold text-yellow-500 text-2xl md:text-5xl text-left md:text-right mb-4">university <span class="">🎓</span></h3>
+                <h4 class="font-light text-xl md:text-3xl text-left md:text-right text-slate-200">2011 - 2013 🇦🇺</h4>
+                <ul class="list-disc">
+                    <li class="text-left md:text-right rtl-list">graduated B.Comm</li>
+                    <li class="text-left md:text-right rtl-list">made some amazing friends</li>
+                    <li class="text-left md:text-right rtl-list">studied too much</li>
+                </ul>
+            </div>
+            <div class="hidden md:block pb-4">
+                <img class="p-8 w-1/2 object-fill" src="./arrow-right-col.png" alt="arrow">
+            </div>
+            <div class="hidden pb-4 md:flex justify-end">
+                <img class="p-8 w-1/2 object-fill" src="./arrow-left-col.png" alt="arrow">
+            </div>
+            <div class="pb-4">
+                <h3 class="font-extrabold text-yellow-500 text-2xl md:text-5xl text-left mb-4"><span class="">🧮&nbsp;</span>accounting</h3>
+                <h4 class="font-light text-xl md:text-3xl text-left text-slate-200">2014 - 2019 🇦🇺</h4>
+                <ul class="list-disc">
+                    <li class="text-left">handled large portfolio of clients</li>
+                    <li class="text-left">learnt a lot about finance, tax and project management</li>
+                    <li class="text-left">became a Chartered Accountant</li>
+                    <li class="text-left">... also studied too much</li>
+                </ul>
+            </div>
+            <div class="py-4">
+                <h3 class="font-extrabold text-yellow-500 text-2xl md:text-5xl text-left md:text-right mb-4">developer <span class="">👨‍💻</span></h3>
+                <h4 class="font-light text-xl md:text-3xl text-left md:text-right text-slate-200">2019 - 2022 🇯🇵</h4>
+                <ul class="list-disc">
+                    <li class="text-left md:text-right rtl-list">moved to Tokyo and learnt Japanese</li>
+                    <li class="text-left md:text-right rtl-list">studied programming (for fun this time!)</li>
+                    <li class="text-left md:text-right rtl-list">worked as an engineer / manager for online business</li>
+                    <li class="text-left md:text-right rtl-list">had a lot of fun</li>
+                </ul>
+            </div>
+            <div class="hidden md:block">
+                <img class="p-8 w-1/2 object-fill" src="./arrow-right-col.png" alt="arrow">
+            </div>
+            <div class="hidden md:block py-4"></div>
+            <div class="py-4">
+                <h3 class="font-extrabold text-yellow-500 text-2xl md:text-5xl text-left mb-4"><span class="">💻&nbsp;</span> freelancing</h3>
+                <h4 class="font-light text-xl md:text-3xl text-left text-slate-200">2022 - now 🇦🇺</h4>
+                <ul class="list-disc">
+                    <li class="text-left">started freelancing for previous JP-based employer</li>
+                    <li class="text-left">looking forward to the next adventure</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-section" class="w-100 bg-blue-500 text-white py-16 mt-16 background-stylised-dots-2 drop-shadow-2xl">
+        <div>
+            <h1 class="font-extrabold text-5xl px-3 md:text-8xl my-5 text-center text-yellow-500 --stroke">contact</h1>
+            <hr class="mx-4">
+        </div>
+        <div class="flex flex-col md:flex-row justify-center align-middle mt-16">
+            <div class="relative m-auto">
+                <span id="copied-tooltip" class="absolute bg-slate-800 p-2 opacity-0">copied!</span>
+                <button id="email-text"class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:mb-0 md:text-3xl py-2 px-4 mx-auto rounded drop-shadow-xl"data-clipboard-text="sean.o@hotmail.com">sean.o@hotmail.com</button>
+            </div>
+            <a href="https://www.linkedin.com/in/seanobrien4/" target="_blank" class="m-auto p-2 md:ml-6 font-bold text-2xl text-white hover:bg-yellow-500 underline text-center">linkedIn</a>
+        </div>
+    </section>
+
+</body>
+    <!-- Animated background -->
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/vendor/three.r119.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/tengbao/vanta@master/dist/vanta.net.min.js"></script>
+    <!-- Alpine Plugins - Collapse -->
+    <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <!-- Alpine Core -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Copy to clipboard -->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
+    <!-- Website logic -->
+    <script src="./index.js" type="text/javascript"></script>
+</html>
