@@ -35,26 +35,6 @@ function removeFadeOut( el, speed ) {
   }, speed);
 }
 
-// Show navbar on scroll
-nav = document.getElementById("nav");
-limitY = 250;
-
-function detectScroll() {
-  //console.log(window.pageYOffset);
-  if (window.pageYOffset < limitY) {
-    nav.classList.add("navbar-hidden"); 
-    nav.classList.remove("navbar-show");
-    //console.log("show navbar");
-  } else {
-    nav.classList.remove("navbar-hidden");
-    nav.classList.add("navbar-show");
-    //console.log("hide navbar");
-  }
-}
-
-detectScroll();
-window.addEventListener("scroll", detectScroll)
-
 // handle animations that react to scrolling
 
 function reveal() {
@@ -164,3 +144,39 @@ stickyButton.addEventListener("click", () => {
   document.getElementById("projects-section").scrollIntoView()
 }); 
 bodyElement.append(stickyButton);
+
+// Show navbar on scroll
+nav = document.getElementById("nav");
+limitYNav = 250;
+limitYProjects = 900;
+
+function detectScroll() {
+  //console.log(window.pageYOffset);
+  if (window.pageYOffset < limitYNav) {
+    nav.classList.add("navbar-hidden"); 
+    nav.classList.remove("navbar-show");
+    //console.log("show navbar");
+  } else {
+    nav.classList.remove("navbar-hidden");
+    nav.classList.add("navbar-show");
+    //console.log("hide navbar");
+  }
+
+  if (window.pageYOffset < limitYProjects) {
+    stickyButton.style.display = "none";
+  } 
+
+  let projectsActive = false;
+  if (webSelected || mobileSelected || businessSelected) {
+    projectsActive = true;
+  } else {
+    projectsActive = false;
+  }
+
+  if (window.pageYOffset >= limitYProjects && projectsActive) {
+    stickyButton.style.display = "block";
+  } 
+}
+
+detectScroll();
+window.addEventListener("scroll", detectScroll)
