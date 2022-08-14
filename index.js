@@ -9,7 +9,7 @@ VANTA.NET({
   scaleMobile: 1.00,
   color: 0xf7af0a,
   backgroundColor: 0x1e283e,
-  points: 15.00,
+  points: 8.00,
   maxDistance: 19.00
 })
 
