@@ -148,7 +148,7 @@ bodyElement.append(stickyButton);
 // Show navbar on scroll
 nav = document.getElementById("nav");
 limitYNav = 250;
-limitYProjects = 900;
+limitYProjects = 950;
 
 function detectScroll() {
   //console.log(window.pageYOffset);

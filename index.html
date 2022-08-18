@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sean's Porfolio</title>
-    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="./build.css">
+
+    <!-- Primary Meta Tags -->
+    <title>Sean O'Brien - Portfolio Site</title>
+    <meta name="title" content="Sean O'Brien - Portfolio Site">
+    <meta name="description" content="This site showcases some of my projects - please take a look yourself!">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seanobrien.dev/">
+    <meta property="og:title" content="Sean O'Brien - Portfolio Site">
+    <meta property="og:description" content="This site showcases some of my projects - please take a look yourself!">
+    <meta property="og:image" content="./images/profile-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://seanobrien.dev/">
+    <meta property="twitter:title" content="Sean O'Brien - Portfolio Site">
+    <meta property="twitter:description" content="This site showcases some of my projects - please take a look yourself!">
+    <meta property="twitter:image" content="./images/profile-image.jpg">
 </head>
 <body id="body" class="preload bg-slate-900">
 
@@ -22,7 +40,7 @@
     <section id="hero--div" class="w-100 h-screen min-h-full text-white mx-0 drop-shadow-xl overflow-x-hidden"> 
         <div class="md:flex md:flex-row-reverse md:justify-center md:align-middle md:pt-32">
             <div class="p-14">
-                <img id="profile-picture" class="rounded-full m-auto" src="./profile-image.jpg"/>
+                <img id="profile-picture" class="rounded-full m-auto" src="./images/profile-image.jpg"/>
             </div>
             <div class="mt-2 md:mt-5 px-5">
                 <h1 class="lg:text-8xl md:6xl text-5xl space-y-5 font-bold bg-slate-800/50 rounded-sm md:bg-transparent py-4"><span class="text-yellow-500">I'm <b class="font-extrabold">Sean</b></span></br>a developer</br><span class="text-yellow-500">for you</span></h1>
@@ -39,9 +57,9 @@
             <p class="text-xl mt-10 text-center m-auto max-w-screen-md p-4 md:text-2xl"><b class="text-yellow-500 font-extrabold">Please press</b> the below project buttons to view my work.<br/>You can demo the projects live too (except for business).</p>
         </div>
         <div class="flex flex-col md:flex-row justify-center align-middle mt-16">
-            <button id="business-projects" @click="business = ! business; if (business) {document.getElementById('business-projects').scrollIntoView()}; if (web) {web = !web}; if (mobile) {mobile = ! mobile}; styleButtons('business')" class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:mb-0 md:text-3xl py-2 px-4 mx-16 md:mx-12 rounded drop-shadow-xl">business (4)</button>
-            <button id="web-projects" @click="web = ! web; if (web) {document.getElementById('web-projects').scrollIntoView()}; if (business) {business = !business}; if (mobile) {mobile = ! mobile}; styleButtons('web')" class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:mb-0 md:text-3xl py-2 px-4 mx-16 md:mx-12 rounded drop-shadow-xl">web (3)</button>
-            <button id="mobile-projects" @click="mobile = ! mobile; if (mobile) {document.getElementById('mobile-projects').scrollIntoView()}; if (business) {business = !business}; if (web) {web = ! web}; styleButtons('mobile')" class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:mb-0 md:text-3xl py-2 px-4 mx-16 md:mx-12 rounded drop-shadow-xl">mobile (2)</button>
+            <button id="business-projects" @click="business = ! business; if (business) {document.getElementById('business-projects').scrollIntoView()}; if (web) {web = !web}; if (mobile) {mobile = ! mobile}; styleButtons('business')" class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:mb-0 md:text-3xl py-2 px-4 mx-16 md:mx-12 rounded-sm drop-shadow-xl">business (4)</button>
+            <button id="web-projects" @click="web = ! web; if (web) {document.getElementById('web-projects').scrollIntoView()}; if (business) {business = !business}; if (mobile) {mobile = ! mobile}; styleButtons('web')" class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:mb-0 md:text-3xl py-2 px-4 mx-16 md:mx-12 rounded-sm drop-shadow-xl">web (3)</button>
+            <button id="mobile-projects" @click="mobile = ! mobile; if (mobile) {document.getElementById('mobile-projects').scrollIntoView()}; if (business) {business = !business}; if (web) {web = ! web}; styleButtons('mobile')" class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:mb-0 md:text-3xl py-2 px-4 mx-16 md:mx-12 rounded-sm drop-shadow-xl">mobile (2)</button>
         </div>
 
         <div x-show="business" x-collapse>
@@ -445,49 +463,49 @@
         <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-1 gap-4 mt-16 px-14">
             <div class="pb-4"">
                 <h3 class="font-extrabold text-yellow-500 text-3xl md:text-5xl text-left md:text-right mb-4">university <span class="">🎓</span></h3>
-                <h4 class="font-extralight italic text-xl md:text-3xl text-left md:text-right text-slate-200">2011 - 2013 🇦🇺</h4>
+                <h4 class="font-normal italic text-xl md:text-3xl text-left md:text-right text-slate-200">2011 - 2013 🇦🇺</h4>
                 <ul class="list-disc">
-                    <li class="text-xl text-left md:text-right rtl-list">graduated B.Comm</li>
-                    <li class="text-xl text-left md:text-right rtl-list">made some amazing friends</li>
-                    <li class="text-xl text-left md:text-right rtl-list">studied too much</li>
+                    <li class="text-xl font-bold text-left md:text-right rtl-list">graduated B.Comm</li>
+                    <li class="text-xl font-bold text-left md:text-right rtl-list">made some amazing friends</li>
+                    <li class="text-xl font-bold text-left md:text-right rtl-list">studied too much</li>
                 </ul>
             </div>
             <div class="hidden md:block pb-4">
-                <img class="p-8 w-1/2 object-fill" src="./arrow-right-col.png" alt="arrow">
+                <img class="p-8 w-1/2 object-fill" src="./images/arrow-right-col.png" alt="arrow">
             </div>
             <div class="hidden pb-4 md:flex justify-end">
-                <img class="p-8 w-1/2 object-fill" src="./arrow-left-col.png" alt="arrow">
+                <img class="p-8 w-1/2 object-fill" src="./images/arrow-left-col.png" alt="arrow">
             </div>
             <div class="pb-4">
                 <h3 class="font-extrabold text-yellow-500 text-3xl md:text-5xl text-left mb-4"><span class="">🧮&nbsp;</span>accounting</h3>
-                <h4 class="font-extralight italic text-xl md:text-3xl text-left text-slate-200">2014 - 2019 🇦🇺</h4>
+                <h4 class="font-normal italic text-xl md:text-3xl text-left text-slate-200">2014 - 2019 🇦🇺</h4>
                 <ul class="list-disc">
-                    <li class="text-xl text-left">handled large portfolio of clients</li>
-                    <li class="text-xl text-left">learnt a lot about finance, tax and project management</li>
-                    <li class="text-xl text-left">became a Chartered Accountant</li>
-                    <li class="text-xl text-left">... also studied too much</li>
+                    <li class="text-xl font-bold text-left">handled large portfolio of clients</li>
+                    <li class="text-xl font-bold text-left">learnt a lot about finance, tax and project management</li>
+                    <li class="text-xl font-bold text-left">became a Chartered Accountant</li>
+                    <li class="text-xl font-bold text-left">... also studied too much</li>
                 </ul>
             </div>
             <div class="py-4">
                 <h3 class="font-extrabold text-yellow-500 text-3xl md:text-5xl text-left md:text-right mb-4">developer <span class="">👨‍💻</span></h3>
-                <h4 class="font-extralight italic text-xl md:text-3xl text-left md:text-right text-slate-200">2019 - 2022 🇯🇵</h4>
+                <h4 class="font-normal italic text-xl md:text-3xl text-left md:text-right text-slate-200">2019 - 2022 🇯🇵</h4>
                 <ul class="list-disc">
-                    <li class="text-xl text-left md:text-right rtl-list">moved to Tokyo and learnt Japanese</li>
-                    <li class="text-xl text-left md:text-right rtl-list">studied programming (for fun this time!)</li>
-                    <li class="text-xl text-left md:text-right rtl-list">worked as an engineer / manager for an online business</li>
-                    <li class="text-xl text-left md:text-right rtl-list">had the time of my life</li>
+                    <li class="text-xl font-bold text-left md:text-right rtl-list">moved to Tokyo and learnt Japanese</li>
+                    <li class="text-xl font-bold text-left md:text-right rtl-list">studied programming (for fun this time!)</li>
+                    <li class="text-xl font-bold text-left md:text-right rtl-list">worked as an engineer / manager for an online business</li>
+                    <li class="text-xl font-bold text-left md:text-right rtl-list">had the time of my life</li>
                 </ul>
             </div>
             <div class="hidden md:block">
-                <img class="p-8 w-1/2 object-fill" src="./arrow-right-col.png" alt="arrow">
+                <img class="p-8 w-1/2 object-fill" src="./images/arrow-right-col.png" alt="arrow">
             </div>
             <div class="hidden md:block py-4"></div>
             <div class="py-4">
                 <h3 class="font-extrabold text-yellow-500 text-3xl md:text-5xl text-left mb-4"><span class="">💻&nbsp;</span> freelancing</h3>
-                <h4 class="font-extralight italic text-xl md:text-3xl text-left text-slate-200">2022 - now 🇦🇺</h4>
+                <h4 class="font-normal italic text-xl md:text-3xl text-left text-slate-200">2022 - now 🇦🇺</h4>
                 <ul class="list-disc">
-                    <li class="text-xl text-left">started freelancing for Japanese company</li>
-                    <li class="text-xl text-left">looking forward to the next adventure</li>
+                    <li class="text-xl font-bold text-left">started freelancing for Japanese company</li>
+                    <li class="text-xl font-bold text-left">looking forward to the next adventure</li>
                 </ul>
             </div>
         </div>
@@ -498,16 +516,37 @@
             <h1 class="font-extrabold text-5xl px-3 md:text-8xl my-5 text-center text-yellow-500 --stroke">contact</h1>
             <hr class="mx-4">
         </div>
-        <div class="flex flex-col md:flex-row justify-center align-middle mt-16">
+        <div class="flex flex-col justify-center space-y-2 align-middle mt-16">
             <div class="relative m-auto">
                 <span id="copied-tooltip" class="absolute bg-yellow-500 text-black p-2 opacity-0">copied!</span>
-                <button id="email-text" class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:mb-0 md:text-3xl py-2 px-4 mx-auto rounded drop-shadow-xl" data-clipboard-text="sean.o@hotmail.com">sean.o@hotmail.com</button>
+                <button id="email-text" class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:text-3xl py-2 px-4 mx-auto rounded-sm drop-shadow-xl" data-clipboard-text="sean.o@hotmail.com">
+                    <div class="flex justify-center align-middle">
+                        <span>sean.o@hotmail.com |&nbsp;</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 m-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                        </svg>
+                    </div>
+                </button>
             </div>
             <a href="https://www.linkedin.com/in/seanobrien4/" target="_blank" class="m-auto">
-                <button class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:mb-0 md:text-3xl py-2 px-4 mx-auto rounded drop-shadow-xl">resume</button>
+                <button class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:text-3xl py-2 px-4 mx-auto rounded-sm drop-shadow-xl">
+                    <div class="flex justify-center align-middle">
+                        <span>resume |&nbsp;</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 m-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                </button>
             </a>
             <a href="#" target="_blank" class="m-auto">
-                <button class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:mb-0 md:text-3xl py-2 px-4 mx-auto rounded drop-shadow-xl">linkedIn</button>
+                <button class="bg-yellow-500 hover:bg-yellow-300 ease-in-out text-slate-800 font-bold text-2xl mb-8 md:text-3xl py-2 px-4 mx-auto rounded-sm drop-shadow-xl">
+                    <div class="flex justify-center align-middle">
+                        <span>linkedIn |&nbsp;</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 m-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </div>
+                </button>
             </a>
         </div>
     </section>
