@@ -127,11 +127,6 @@ function styleButtons(buttonName) {
       businessSelected = false;
     }
   }
-  if (webSelected || mobileSelected || businessSelected) {
-    stickyButton.style.display = "block";
-  } else {
-    stickyButton.style.display = "none";
-  }
 }
 
 // handle the sticky button to close projects
