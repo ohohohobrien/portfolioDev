@@ -15,8 +15,8 @@ VANTA.NET({
 
 // Remove the page loader
 loader = document.getElementById("loader");
-FADEOUT_TIMER = 500; //500
-LOAD_TIMER = 1500; //1500
+FADEOUT_TIMER = 300; //500
+LOAD_TIMER = 200; //1500
 
 window.addEventListener("load", () => {
   setTimeout(() => {
