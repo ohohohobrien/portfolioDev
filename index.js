@@ -15,8 +15,8 @@ VANTA.NET({
 
 // Remove the page loader
 loader = document.getElementById("loader");
-FADEOUT_TIMER = 300; //500
-LOAD_TIMER = 200; //1500
+FADEOUT_TIMER = 500; //500
+LOAD_TIMER = 200; //500
 
 window.addEventListener("load", () => {
   setTimeout(() => {
@@ -127,6 +127,7 @@ function styleButtons(buttonName) {
       businessSelected = false;
     }
   }
+
 }
 
 // handle the sticky button to close projects

@@ -110,47 +110,47 @@ body {
 }
 
 .--bg-map {
-    background-image: url("./images/world-map.jpg");
+    background-image: url("./images/world-map.webp");
     background-size: auto;
 }
 
 .--bg-calm {
-    background-image: url("./images/calm.jpg");
+    background-image: url("./images/calm.webp");
     background-size: auto;
 }
 
 .--bg-joke {
-    background-image: url("./images/joke.jpg");
+    background-image: url("./images/joke.webp");
     background-size: auto;
 }
 
 .--bg-dice {
-    background-image: url("./images/dice.jpg");
+    background-image: url("./images/dice.webp");
     background-size: auto;
 }
 
 .--bg-orb {
-    background-image: url("./images/orb.jpg");
+    background-image: url("./images/orb.webp");
     background-size: auto;
 }
 
 .--bg-feedback {
-    background-image: url("./images/feedback.jpg");
+    background-image: url("./images/feedback.webp");
     background-size: auto;
 }
 
 .--bg-automation {
-    background-image: url("./images/automate.jpg");
+    background-image: url("./images/automate.webp");
     background-size: auto;
 }
 
 .--bg-slack {
-    background-image: url("./images/slack.jpg");
+    background-image: url("./images/slack.webp");
     background-size: auto;
 }
 
 .--bg-email {
-    background-image: url("./images/email.jpg");
+    background-image: url("./images/email.webp");
     background-size: auto;
 }
 
@@ -311,47 +311,47 @@ body {
     }
 
     .--bg-map {
-        background-image: url("./images/world-map.jpg");
+        background-image: url("./images/world-map.webp");
         background-size: cover;
     }
     
     .--bg-calm {
-        background-image: url("./images/calm.jpg");
+        background-image: url("./images/calm.webp");
         background-size: cover;
     }
     
     .--bg-joke {
-        background-image: url("./images/joke.jpg");
+        background-image: url("./images/joke.webp");
         background-size: cover;
     }
     
     .--bg-dice {
-        background-image: url("./images/dice.jpg");
+        background-image: url("./images/dice.webp");
         background-size: cover;
     }
     
     .--bg-orb {
-        background-image: url("./images/orb.jpg");
+        background-image: url("./images/orb.webp");
         background-size: cover;
     }
     
     .--bg-feedback {
-        background-image: url("./images/feedback.jpg");
+        background-image: url("./images/feedback.webp");
         background-size: cover;
     }
     
     .--bg-automation {
-        background-image: url("./images/automate.jpg");
+        background-image: url("./images/automate.webp");
         background-size: cover;
     }
     
     .--bg-slack {
-        background-image: url("./images/slack.jpg");
+        background-image: url("./images/slack.webp");
         background-size: cover;
     }
     
     .--bg-email {
-        background-image: url("./images/email.jpg");
+        background-image: url("./images/email.webp");
         background-size: cover;
     }
 

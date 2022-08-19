@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./build.css">
+    <link rel="stylesheet" href="./output.css">
     <link rel="stylesheet" href="./index.css">
 
     <!-- Primary Meta Tags -->
@@ -17,14 +17,14 @@
     <meta property="og:url" content="https://seanobrien.dev/">
     <meta property="og:title" content="Sean O'Brien - Portfolio Site">
     <meta property="og:description" content="This site showcases some of my projects - please take a look yourself!">
-    <meta property="og:image" content="./images/profile-image.jpg">
+    <meta property="og:image" content="./images/profile-image.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://seanobrien.dev/">
     <meta property="twitter:title" content="Sean O'Brien - Portfolio Site">
     <meta property="twitter:description" content="This site showcases some of my projects - please take a look yourself!">
-    <meta property="twitter:image" content="./images/profile-image.jpg">
+    <meta property="twitter:image" content="./images/profile-image.webp">
 </head>
 <body id="body" class="preload bg-slate-900">
 
@@ -33,15 +33,15 @@
     </div>
 
     <nav id="nav" class="navbar-hidden fixed bg-slate-800/90 md:bg-slate-800/60 top-0 left-0 w-100 z-10 p-4 mx-0 rounded-br-md border-yellow-500 border-2 drop-shadow-xl">
-        <a href="#projects-section" class="mx-4 font-base text-yellow-500 text-base md:text-2xl hover:underline">projects</a>
-        <a href="#about-section" class="mx-4 font-base text-yellow-500 text-base md:text-2xl hover:underline">about</a>
-        <a href="#contact-section" class="mx-4 font-base text-yellow-500 text-base md:text-2xl hover:underline">contact</a>
+        <a onclick="{document.getElementById('projects-section').scrollIntoView()}" class="mx-4 font-base text-yellow-500 text-base md:text-2xl hover:underline hover:cursor-pointer">projects</a>
+        <a onclick="{document.getElementById('about-section').scrollIntoView()}" class="mx-4 font-base text-yellow-500 text-base md:text-2xl hover:underline hover:cursor-pointer">about</a>
+        <a onclick="{document.getElementById('contact-section').scrollIntoView()}" class="mx-4 font-base text-yellow-500 text-base md:text-2xl hover:underline hover:cursor-pointer">contact</a>
     </nav>
 
     <section id="hero--div" class="w-100 h-screen min-h-full text-white mx-0 drop-shadow-xl overflow-x-hidden"> 
         <div class="md:flex md:flex-row-reverse md:justify-center md:align-middle md:pt-32">
             <div class="p-14">
-                <img id="profile-picture" class="rounded-full m-auto" src="./images/profile-image.jpg"/>
+                <img id="profile-picture" class="rounded-full m-auto" src="./images/profile-image.webp" alt="profile picture"/>
             </div>
             <div class="mt-2 md:mt-5 px-5">
                 <h1 class="lg:text-8xl md:6xl text-5xl space-y-5 font-bold bg-slate-800/50 rounded-sm md:bg-transparent py-4"><span class="text-yellow-500">I'm <b class="font-extrabold">Sean</b></span></br>a developer</br><span class="text-yellow-500">for you</span></h1>
@@ -240,8 +240,8 @@
                     <hr class="mx-1 md:mx-5 border-yellow-500 col-span-1 lg:col-span-3">
                     <div class="col-span-1 lg:col-span-2 md:p-5 p-2 flex align-middle">
                         <video autoplay loop muted playsinline class="m-auto rounded-3xl">
-                            <source  loading="lazy" type="video/webm" src="https://ohohohobrien.github.io/portfolio/images/Punny.webm">
-                            <img  loading="lazy" src="https://ohohohobrien.github.io/portfolio/images/punny.png">
+                            <source  loading="lazy" type="video/webm" src="./images/Punny.webm">
+                            <img  loading="lazy" src="./images/joke.webp">
                         </video>
                     </div>
                     <div class="col-span-1 p-2 md:p-5">
@@ -287,8 +287,8 @@
                     <hr class="mx-1 md:mx-5 border-violet-500 col-span-1 lg:col-span-3">
                     <div class="col-span-1 lg:col-span-2 md:p-5 p-2 flex align-middle">
                         <video autoplay loop muted playsinline class="m-auto rounded-3xl">
-                            <source loading="lazy" type="video/webm" src="https://ohohohobrien.github.io/portfolio/images/CBT.webm">
-                            <img loading="lazy" src="https://ohohohobrien.github.io/portfolio/images/CBT.png">
+                            <source loading="lazy" type="video/webm" src="./images/CBT.webm">
+                            <img loading="lazy" src="./images/calm.webp">
                         </video>
                     </div>
                     <div class="col-span-1 p-2 md:p-5">
@@ -332,8 +332,8 @@
                     <hr class="mx-1 md:mx-5 border-green-500 col-span-1 lg:col-span-3">
                     <div class="col-span-1 lg:col-span-2 md:p-5 p-2 flex align-middle">
                         <video autoplay loop muted playsinline class="m-auto rounded-3xl">
-                            <source loading="lazy" type="video/webm" src="https://ohohohobrien.github.io/portfolio/images/IWentHere.webm">
-                            <img loading="lazy" src="https://ohohohobrien.github.io/portfolio/images/IWentHere.png">
+                            <source loading="lazy" type="video/webm" src="./images/IWentHere.webm">
+                            <img loading="lazy" src="./images/world-map.webp">
                         </video>
                     </div>
                     <div class="col-span-1 p-2 md:p-5">
@@ -380,8 +380,8 @@
                     <hr class="mx-1 md:mx-5 border-violet-400 col-span-1 lg:col-span-3">
                     <div class="col-span-1 lg:col-span-2 md:p-5 p-2 flex align-middle">
                         <video autoplay loop muted playsinline class="m-auto rounded-3xl">
-                            <source loading="lazy" type="video/webm" src="https://ohohohobrien.github.io/portfolio/images/VirtualDice.webm">
-                            <img loading="lazy" src="https://ohohohobrien.github.io/portfolio/images/endframe.png">
+                            <source loading="lazy" type="video/webm" src="./images/VirtualDice.webm">
+                            <img loading="lazy" src="./images/dice.webp">
                         </video>
                     </div>
                     <div class="col-span-1 p-2 md:p-5">
@@ -421,8 +421,8 @@
                     <hr class="mx-1 md:mx-5 border-red-500 col-span-1 lg:col-span-3">
                     <div class="col-span-1 lg:col-span-2 md:p-5 p-2 flex align-middle">
                         <video autoplay loop muted playsinline class="m-auto rounded-3xl">
-                            <source loading="lazy" type="video/webm" src="https://ohohohobrien.github.io/portfolio/images/OrbOrb.webm">
-                            <img loading="lazy" src="https://ohohohobrien.github.io/portfolio/images/feature.png">
+                            <source loading="lazy" type="video/webm" src="./images/OrbOrb.webm">
+                            <img loading="lazy" src="./images/orb.webp">
                         </video>
                     </div>
                     <div class="col-span-1 p-2 md:p-5">
@@ -472,10 +472,10 @@
                 </ul>
             </div>
             <div class="hidden md:block pb-4">
-                <img loading="lazy" class="p-8 w-1/2 object-fill" src="./images/arrow-right-col.png" alt="arrow">
+                <img loading="lazy" class="p-8 w-1/2 object-fill" src="./images/arrow-right-col.webp" alt="arrow">
             </div>
             <div class="hidden pb-4 md:flex justify-end">
-                <img loading="lazy" class="p-8 w-1/2 object-fill" src="./images/arrow-left-col.png" alt="arrow">
+                <img loading="lazy" class="p-8 w-1/2 object-fill" src="./images/arrow-left-col.webp" alt="arrow">
             </div>
             <div class="pb-4">
                 <h3 class="font-extrabold text-yellow-500 text-3xl md:text-5xl text-left mb-4"><span class="">🧮&nbsp;</span>accounting</h3>
@@ -498,7 +498,7 @@
                 </ul>
             </div>
             <div class="hidden md:block">
-                <img loading="lazy" class="p-8 w-1/2 object-fill" src="./images/arrow-right-col.png" alt="arrow">
+                <img loading="lazy" class="p-8 w-1/2 object-fill" src="./images/arrow-right-col.webp" alt="arrow">
             </div>
             <div class="hidden md:block py-4"></div>
             <div class="py-4">
