@@ -1097,6 +1097,10 @@ video {
   height: 100vh;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
 .h-5 {
   height: 1.25rem;
 }
@@ -1111,10 +1115,6 @@ video {
 
 .h-auto {
   height: auto;
-}
-
-.h-8 {
-  height: 2rem;
 }
 
 .min-h-full {
@@ -1137,12 +1137,12 @@ video {
   min-height: fit-content;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
 .w-1 {
   width: 0.25rem;
+}
+
+.w-8 {
+  width: 2rem;
 }
 
 .w-10 {
@@ -1189,8 +1189,8 @@ video {
   width: 1.5rem;
 }
 
-.w-8 {
-  width: 2rem;
+.w-1\/2 {
+  width: 50%;
 }
 
 .min-w-full {
@@ -1237,6 +1237,14 @@ video {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
+}
+
+.max-w-xl {
+  max-width: 36rem;
+}
+
+.max-w-xs {
+  max-width: 20rem;
 }
 
 .border-collapse {
@@ -1455,6 +1463,10 @@ video {
   overflow-x: hidden;
 }
 
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -1577,17 +1589,14 @@ video {
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
 }
 
+.bg-slate-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
 .bg-slate-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
-}
-
-.bg-slate-800\/90 {
-  background-color: rgb(30 41 59 / 0.9);
-}
-
-.bg-slate-800\/50 {
-  background-color: rgb(30 41 59 / 0.5);
 }
 
 .bg-yellow-500 {
@@ -1600,21 +1609,9 @@ video {
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
-.bg-slate-200\/20 {
-  background-color: rgb(226 232 240 / 0.2);
-}
-
-.bg-slate-600\/70 {
-  background-color: rgb(71 85 105 / 0.7);
-}
-
 .bg-green-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
-}
-
-.bg-slate-600\/90 {
-  background-color: rgb(71 85 105 / 0.9);
 }
 
 .bg-blue-700 {
@@ -1627,10 +1624,6 @@ video {
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
-.bg-slate-600\/60 {
-  background-color: rgb(71 85 105 / 0.6);
-}
-
 .bg-violet-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(139 92 246 / var(--tw-bg-opacity));
@@ -1639,11 +1632,6 @@ video {
 .bg-violet-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(167 139 250 / var(--tw-bg-opacity));
-}
-
-.bg-slate-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 
 .bg-slate-200 {
@@ -1735,6 +1723,30 @@ video {
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
 }
 
+.bg-slate-800\/90 {
+  background-color: rgb(30 41 59 / 0.9);
+}
+
+.bg-slate-800\/50 {
+  background-color: rgb(30 41 59 / 0.5);
+}
+
+.bg-slate-200\/20 {
+  background-color: rgb(226 232 240 / 0.2);
+}
+
+.bg-slate-600\/70 {
+  background-color: rgb(71 85 105 / 0.7);
+}
+
+.bg-slate-600\/90 {
+  background-color: rgb(71 85 105 / 0.9);
+}
+
+.bg-slate-600\/60 {
+  background-color: rgb(71 85 105 / 0.6);
+}
+
 .bg-none {
   background-image: none;
 }
@@ -1752,16 +1764,16 @@ video {
      object-fit: fill;
 }
 
+.p-2 {
+  padding: 0.5rem;
+}
+
 .p-4 {
   padding: 1rem;
 }
 
 .p-14 {
   padding: 3.5rem;
-}
-
-.p-2 {
-  padding: 0.5rem;
 }
 
 .p-8 {
@@ -2017,6 +2029,10 @@ video {
   font-weight: 800;
 }
 
+.font-normal {
+  font-weight: 400;
+}
+
 .font-extralight {
   font-weight: 200;
 }
@@ -2173,6 +2189,14 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+canvas {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  box-sizing: border-box;
+  height: auto;
+  width: auto;
+}
+
 .--sticky-button {
   display: none;
   position: sticky;
@@ -2324,47 +2348,47 @@ body {
 }
 
 .--bg-map {
-  background-image: url("./images/world-map.jpg");
+  background-image: url("./images/world-map.webp");
   background-size: auto;
 }
 
 .--bg-calm {
-  background-image: url("./images/calm.jpg");
+  background-image: url("./images/calm.webp");
   background-size: auto;
 }
 
 .--bg-joke {
-  background-image: url("./images/joke.jpg");
+  background-image: url("./images/joke.webp");
   background-size: auto;
 }
 
 .--bg-dice {
-  background-image: url("./images/dice.jpg");
+  background-image: url("./images/dice.webp");
   background-size: auto;
 }
 
 .--bg-orb {
-  background-image: url("./images/orb.jpg");
+  background-image: url("./images/orb.webp");
   background-size: auto;
 }
 
 .--bg-feedback {
-  background-image: url("./images/feedback.jpg");
+  background-image: url("./images/feedback.webp");
   background-size: auto;
 }
 
 .--bg-automation {
-  background-image: url("./images/automate.jpg");
+  background-image: url("./images/automate.webp");
   background-size: auto;
 }
 
 .--bg-slack {
-  background-image: url("./images/slack.jpg");
+  background-image: url("./images/slack.webp");
   background-size: auto;
 }
 
 .--bg-email {
-  background-image: url("./images/email.jpg");
+  background-image: url("./images/email.webp");
   background-size: auto;
 }
 
@@ -2634,47 +2658,47 @@ body {
   }
 
   .--bg-map {
-    background-image: url("./images/world-map.jpg");
+    background-image: url("./images/world-map.webp");
     background-size: cover;
   }
 
   .--bg-calm {
-    background-image: url("./images/calm.jpg");
+    background-image: url("./images/calm.webp");
     background-size: cover;
   }
 
   .--bg-joke {
-    background-image: url("./images/joke.jpg");
+    background-image: url("./images/joke.webp");
     background-size: cover;
   }
 
   .--bg-dice {
-    background-image: url("./images/dice.jpg");
+    background-image: url("./images/dice.webp");
     background-size: cover;
   }
 
   .--bg-orb {
-    background-image: url("./images/orb.jpg");
+    background-image: url("./images/orb.webp");
     background-size: cover;
   }
 
   .--bg-feedback {
-    background-image: url("./images/feedback.jpg");
+    background-image: url("./images/feedback.webp");
     background-size: cover;
   }
 
   .--bg-automation {
-    background-image: url("./images/automate.jpg");
+    background-image: url("./images/automate.webp");
     background-size: cover;
   }
 
   .--bg-slack {
-    background-image: url("./images/slack.jpg");
+    background-image: url("./images/slack.webp");
     background-size: cover;
   }
 
   .--bg-email {
-    background-image: url("./images/email.jpg");
+    background-image: url("./images/email.webp");
     background-size: cover;
   }
 }
